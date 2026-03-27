@@ -15,11 +15,11 @@ class BannerResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,  
-            'name' => $this->name, 
-            'banner' => $this->url, 
-            'serial' => $this->serial, 
-            'status' => $this->status, 
+            'id' => $this->id,
+            'name' => $this->name,
+            'banner' => transformImageUrl($this->url),
+            'serial' => $this->serial,
+            'status' => $this->status,
             'link' => $this->link,
         ];
     }

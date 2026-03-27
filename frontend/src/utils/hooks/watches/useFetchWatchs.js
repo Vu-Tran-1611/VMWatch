@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axiosClient from "../../../axios-client";
+import { axiosPublic } from "../../../axios-client";
 
 function useFetchWatches({ type = null, brand = null, key = null, limit = 8, page = 1 }) {
     const [watches, setWatches] = useState([]);
@@ -18,7 +18,7 @@ function useFetchWatches({ type = null, brand = null, key = null, limit = 8, pag
             setError(null);
             const fetchWatches = async () => {
                 try {
-                    const { data } = await axiosClient.get("api/client/watches", {
+                    const { data } = await axiosPublic.get("api/client/watches", {
                         params: {
                             type: type,
                             limit: limit,

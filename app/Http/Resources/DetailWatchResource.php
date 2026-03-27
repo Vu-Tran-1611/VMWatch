@@ -13,13 +13,13 @@ class DetailWatchResource extends DisplayWatchResource
      * @return array<string, mixed>
      */
     public function toArray(Request $request): array
-    { 
+    {
         $data = parent::toArray($request);
-        $additionalData = [  
+        $additionalData = [
             'id' => $this->id,
             'brand' => $this->whenLoaded('brand',function(){
                 return $this->brand->name;
-            }), 
+            }),
             'features' => $this->whenLoaded('features',function(){
                 return $this->features->select('name');
             }),
@@ -53,7 +53,9 @@ class DetailWatchResource extends DisplayWatchResource
             'stockQuantity' => $this->stock_quantity,
             'description' => $this->description,
             'galleries' => $this->whenLoaded('watchGalleries', function () {
-                return $this->watchGalleries->sortBy('serial')->select('banner');
+                return $this->watchGalleries->sortBy('serial')->map(function ($gallery) {
+                    return ['banner' => transformImageUrl($gallery->banner)];
+                })->values();
             }),
             'meta_title' => $this->meta_title,
             'meta_description' => $this->meta_description,

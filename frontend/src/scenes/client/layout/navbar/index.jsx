@@ -13,11 +13,11 @@ const Navbar = ({ isMobile = false }) => {
     const { brands, loading, error } = useFetchBrands({});
 
     const navItems = [
-        { name: "Brand", childs: brands },
+        // { name: "Brand", childs: brands },
         { name: "Male", link: "/watches?type=male" },
         { name: "Female", link: "/watches?type=female" },
         { name: "Couple", link: "/watches?type=couple" },
-        { name: "Contact", link: "/" },
+        // { name: "Contact", link: "/" },
     ];
 
     return (

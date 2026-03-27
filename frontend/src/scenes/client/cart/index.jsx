@@ -120,7 +120,8 @@ const Cart = () => {
             }
         } catch (error) {
             console.error("Payment error:", error);
-            alert("Payment failed. Please try again.");
+            console.error("Error response:", error.response?.data);
+            alert("Payment failed: " + (error.response?.data?.message || error.message || "Please try again."));
         } finally {
             setLoading(false);
         }

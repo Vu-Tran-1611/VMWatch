@@ -135,20 +135,20 @@ const Sidebar = () => {
                     )}
 
                     <Box>
-                        <Item
+                        {/* <Item
                             title="Dashboard"
                             to="/admin"
                             icon={<DashboardIcon />}
                             selected={selected}
                             setSelected={setSelected}
-                        />
-                        <Item
+                        /> */}
+                        {/* <Item
                             title="Homepage"
                             to="/"
                             icon={<HomeOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
-                        />
+                        /> */}
                         <Typography
                             variant="h6"
                             color={colors.grey[300]}
@@ -192,20 +192,21 @@ const Sidebar = () => {
                             selected={selected}
                             setSelected={setSelected}
                         />
-                        <Item
+                        {/* <Item
                             title="Contacts Information"
                             to="/contacts"
                             icon={<ContactsOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
-                        />
-                        <Item
+                        /> */}
+                        {/* <Item
                             title="Invoices Balances"
                             to="/invoices"
                             icon={<ReceiptOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
-                        />
+                        // /> */}
+                        {/*
                         <Typography
                             variant="h6"
                             color={colors.grey[300]}
@@ -269,6 +270,7 @@ const Sidebar = () => {
                             selected={selected}
                             setSelected={setSelected}
                         />
+                        */}
                     </Box>
                 </Menu>
             </ProSidebar>

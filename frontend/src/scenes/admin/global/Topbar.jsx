@@ -14,7 +14,7 @@ const TopBar = () => {
     const colorMode = useContext(ColorModeContext);
     return (
         <Box display="flex" justifyContent="space-between" p={2}>
-            <Box
+            {/* <Box
                 borderRadius="3px"
                 display="flex"
                 backgroundColor={colors.primary[400]}
@@ -23,8 +23,8 @@ const TopBar = () => {
                 <IconButton>
                     <SearchOutlinedIcon />
                 </IconButton>
-            </Box>
-            <Box display="flex">
+            </Box> */}
+            {/* <Box display="flex">
                 <IconButton
                     onClick={colorMode.toggleColorMode}
                     type="button"
@@ -45,7 +45,7 @@ const TopBar = () => {
                 <IconButton>
                     <Person2OutlinedIcon />
                 </IconButton>
-            </Box>
+            </Box> */}
         </Box>
     );
 };

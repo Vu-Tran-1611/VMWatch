@@ -15,27 +15,27 @@ class DisplayWatchResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'name' => $this->name, 
-            'gender' => $this->gender, 
+            'name' => $this->name,
+            'gender' => $this->gender,
             'energy' => $this->whenLoaded('energy',function(){
                 return $this->energy->name;
-            }), 
+            }),
             'dialSize' => $this->whenLoaded('dialSize',function(){
                 return $this->dialSize->name;
-            }), 
+            }),
             'glassMaterial' => $this->whenLoaded('glassMaterial',function(){
                 return $this->glassMaterial->name;
-            }), 
+            }),
             'front' => $this->whenLoaded('watchGalleries', function () {
                 $frontImage = $this->watchGalleries->where('type', 'front')->first();
-                return $frontImage ? $frontImage->banner : null;
+                return $frontImage ? transformImageUrl($frontImage->banner) : null;
             }),
             'thumb' => $this->whenLoaded('watchGalleries', function () {
                 $thumbImage = $this->watchGalleries->where('type', 'thumb')->first();
-                return $thumbImage ? $thumbImage->banner : null;
-            }), 
-            'price'=> $this->price,   
-            'description'=> $this->description,   
+                return $thumbImage ? transformImageUrl($thumbImage->banner) : null;
+            }),
+            'price'=> $this->price,
+            'description'=> $this->description,
             'slug' => $this->slug,
         ];
     }

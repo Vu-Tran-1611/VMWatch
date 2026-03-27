@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axiosClient from "../../../axios-client";
+import { axiosPublic } from "../../../axios-client";
 
 function useFetchBrands({ type = null } = {}) {
     const [brands, setBrands] = useState([]);
@@ -11,7 +11,7 @@ function useFetchBrands({ type = null } = {}) {
         setError(null);
         const fetchBrands = async () => {
             try {
-                const { data } = await axiosClient.get("api/client/brands", {
+                const { data } = await axiosPublic.get("api/client/brands", {
                     params: {
                         type: type,
                     },

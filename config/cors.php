@@ -19,15 +19,27 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:3000')],
+    'allowed_origins' => [
+        env('FRONTEND_URL', 'http://localhost:3000'),
+        'http://localhost:3000',
+        'https://vmwatch.vercel.app',
+    ],
 
-    'allowed_origins_patterns' => [],
+
+    'allowed_origins_patterns' => [
+        '/^http:\/\/localhost:\d+$/',
+        '/^http:\/\/127\.0\.0\.1:\d+$/',
+        '/\.trycloudflare\.com$/',
+        '/\.serveo\.net$/',
+        '/\.ngrok\.io$/',
+        '/\.ngrok-free\.dev$/',
+    ],
 
     'allowed_headers' => ['*'],
 
-    'exposed_headers' => [],
+    'exposed_headers' => ['Authorization'],
 
-    'max_age' => 0,
+    'max_age' => 86400,
 
     'supports_credentials' => true,
 

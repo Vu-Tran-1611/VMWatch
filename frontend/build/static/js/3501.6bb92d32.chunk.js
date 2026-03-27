@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[3501],{3501:(e,n,p)=>{p.r(n),p.d(n,{default:()=>c});p(5043);var a=p(6446),r=p(6240),s=p(344),t=p(579);const c=()=>{const e=(0,r.A)(),n=(0,s.A)(e.breakpoints.up("md"));return(0,t.jsx)(a.A,{margin:n?"20px 200px":"20px 20px",display:"flex",gap:5,children:"PaymentCancel"})}}}]);
+//# sourceMappingURL=3501.6bb92d32.chunk.js.map

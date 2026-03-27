@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[1920],{1920:(e,n,s)=>{s.r(n),s.d(n,{default:()=>u});var p=s(5043),t=s(6446),r=s(6240),a=s(344),c=s(579);const u=()=>{const e=(0,r.A)(),n=(0,a.A)(e.breakpoints.up("md"));return(0,p.useEffect)((()=>{}),[]),(0,c.jsx)(t.A,{margin:n?"20px 200px":"20px 20px",display:"flex",gap:5,children:"PaymentSuccess"})}}}]);
+//# sourceMappingURL=1920.8eb38d43.chunk.js.map

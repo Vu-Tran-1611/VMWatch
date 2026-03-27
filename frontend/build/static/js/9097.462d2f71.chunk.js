@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[9097],{9097:(e,r,s)=>{s.r(r),s.d(r,{default:()=>d});s(5043);var n=s(4528),t=s(835),u=s(579);const d=()=>{const{user:e}=(0,n.Z)();return e&&"user"!==e.role?(0,u.jsx)("div",{children:"Here is Dashboard"}):(0,u.jsx)(t.C5,{to:"/"})}}}]);
+//# sourceMappingURL=9097.462d2f71.chunk.js.map

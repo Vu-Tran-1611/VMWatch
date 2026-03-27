@@ -56,7 +56,7 @@ const Home = () => {
             <BannerGallery />
             {/* Collection */}
             <Collection />
-
+{/*
             {loadingFamousBrands ? (
                 <LoadingComponent />
             ) : errorFamousBrands ? (
@@ -74,7 +74,7 @@ const Home = () => {
                     brands={highEndSwissBrands}
                     title="High-end Swiss Brand"
                 />
-            )}
+            )} */}
 
             <Divider />
             <Watches

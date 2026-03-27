@@ -14,6 +14,14 @@ class BrandGalleryResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'brand_id' => $this->brand_id,
+            'banner' => transformImageUrl($this->banner),
+            'type' => $this->type,
+            'serial' => $this->serial,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+        ];
     }
 }

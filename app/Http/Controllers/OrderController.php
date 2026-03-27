@@ -35,7 +35,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        // Create a new order 
+        // Create a new order
         $order = Order::create([
             'user_id' => $user->id,
             'transaction_id' => $request->input('transaction_id'),
@@ -57,11 +57,20 @@ class OrderController extends Controller
             ]);
         }
 
-        // Send an email to the user
-        Mail::to($user->email)->send(new OrderConfirmationMail($order->load('user')));
+        // Send an email to the user (wrapped in try-catch to prevent order failure)
+        try {
+            Mail::to($user->email)->send(new OrderConfirmationMail($order->load('user')));
+        } catch (\Exception $e) {
+            // Log the error but don't fail the order
+            \Log::error('Failed to send order confirmation email: ' . $e->getMessage());
+        }
 
         // Clear the cart
-        $user->clearCart();
+        try {
+            $user->clearCart();
+        } catch (\Exception $e) {
+            \Log::error('Failed to clear cart: ' . $e->getMessage());
+        }
 
         return response()->json([
             'status' => 'success',

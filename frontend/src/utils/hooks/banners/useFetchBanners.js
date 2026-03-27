@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axiosClient from "../../../axios-client";
+import { axiosPublic } from "../../../axios-client";
 
 function useFetchBanners() {
     const [banners, setBanners] = useState([]);
@@ -11,7 +11,7 @@ function useFetchBanners() {
         setError(null);
         const fetchBanners = async () => {
             try {
-                const { data } = await axiosClient.get("api/client/banners");
+                const { data } = await axiosPublic.get("api/client/banners");
                 setBanners(data.data);
             } catch (error) {
                 setError(error);
